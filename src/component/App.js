@@ -1,11 +1,31 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-import Header from './Header';
+import SimpleMap from './SimpleMap';
 
-export default class App extends React.Component{
+class App extends React.Component{
     render(){
+
         return (
-            <Header />
+            <div>
+
+                <SimpleMap markers={this.props.testStore} onAddMarker={this.props.onAddMarker}/>
+
+            </div>
+
         );
     }
 }
+export default connect(
+    state => ({
+        testStore : state
+    }),
+    dispatch => ({
+        onAddMarker: (lat,lang) => {
+            dispatch({type:'ADD_MARKER', obj:{
+                lat: lat,
+                lang: lang
+            }});
+        }
+    })
+)(App);
