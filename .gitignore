@@ -3,3 +3,5 @@ node_modules
 package-lock.json
 build/bundle.css
 build/bundle.js
+build/bundle.map.css
+build/bundle.map.js
