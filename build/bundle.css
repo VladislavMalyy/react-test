@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  max-width: 160rem;
+  min-width: 32rem;
+  width: 90%;
+  margin: 0 auto;
+}
+.headerBlock {
+  background-color: #000;
+  padding: 2rem 0;
+}
+.headerBlock__container {
+  display: flex;
+  justify-content: space-around;
+}
+.headerBlock__item {
+  font-size: 2rem;
+  color: #fff;
+  border-radius: 1rem;
+  padding: 1rem 3rem;
+  transition: transform 1s;
+}
+.headerBlock__item:hover {
+  transform: scale(1.2);
+}
+.mapBlock {
+  margin-top: 3rem;
+}
+.mapBlock__title {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  font-weight: bold;
+}
+.mapBlock__control {
+  margin-bottom: 3rem;
+}
+.controlBlock {
+  display: flex;
+  justify-content: flex-start;
+}
+.controlBlock__item {
+  margin-right: 2rem;
+  background: #fff;
+  border: 2px solid black;
+  padding: 1rem 2rem;
+  color: #000;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.controlBlock__item:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/*# sourceMappingURL=bundle.css.map*/

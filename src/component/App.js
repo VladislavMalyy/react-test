@@ -11,9 +11,6 @@ class App extends React.Component{
 
     constructor(props){
         super(props);
-        this.state = {
-            isAdd : false
-        }
     }
 
     addMarker(e){
@@ -28,7 +25,6 @@ class App extends React.Component{
             },
             dataType: 'text',
             success: function(data){
-                this.state.isAdd = !this.state.isAdd;
                 console.log('ok', data)
             }.bind(this),
             error: function(err){
