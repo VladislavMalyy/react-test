@@ -18,7 +18,7 @@ class App extends React.Component{
     }
 
     saveMarkers(){
-        $.ajax('http://localhost:1337/add_markers',{
+        $.ajax('/add_markers',{
             type: 'post',
             data:{
                 state: this.props.testStore.markers
@@ -34,7 +34,7 @@ class App extends React.Component{
     }
 
     showAll(){
-        $.ajax('http://localhost:1337/get_markers',{
+        $.ajax('/get_markers',{
             type: 'get',
             dataType: 'json',
             success: function(data){
@@ -50,6 +50,15 @@ class App extends React.Component{
         })
     }
 
+    clearAll(){
+        $.ajax('rm_all',{
+            type: 'get',
+            dataType: 'json',
+            success: function(data){},
+            error: function(err){}
+        })
+    }
+
     render(){
         console.log(this.props.testStore);
         return(
@@ -61,6 +70,7 @@ class App extends React.Component{
                         <div className="mapBlock__control controlBlock">
                             <button className="controlBlock__item" onClick={this.saveMarkers.bind(this)}>Save To Database</button>
                             <button className="controlBlock__item" onClick={this.showAll.bind(this)}>Show All</button>
+                            <button className="controlBlock__item" onClick={this.clearAll.bind(this)}>Clear DB</button>
                         </div>
                     </div>
                     <Map

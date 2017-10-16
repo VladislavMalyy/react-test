@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "./node_modules/.bin/webpack-dev-server --content-base build --debug --hot --watch --inline --port 8090"
+    "dev": "./node_modules/.bin/webpack-dev-server --content-base build --debug --hot --watch --inline --port 8890",
+    "start": "node app",
+    "watch": "nodemon app && mongod"
   },
   "author": "",
   "license": "ISC",
@@ -25,10 +27,13 @@
   "dependencies": {
     "2gis-maps": "^3.3.5",
     "2gis-maps-react": "0.0.4",
+    "basic-auth": "^2.0.0",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "install": "^0.10.1",
     "jquery": "^3.2.1",
     "mongodb": "^2.2.32",
+    "npm": "^5.5.1",
     "path": "^0.12.7",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

@@ -5,9 +5,15 @@ let path = require('path');
 
 let app = express();
 let db;
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.static(path.join(__dirname, "build")));
+
+app.get('/rm_all', function(req,res){
+    res.header('Access-Control-Allow-Origin', '*');
+    db.collection('markers').drop();
+});
 
 app.get('/get_markers', function(req,res){
     res.header('Access-Control-Allow-Origin', '*');
